@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hellokube-svc
+  labels:
+    app: hellokubeapp
+    zone: dev
+spec:
+  type: NodePort
+  ports:
+  - port: 9090
+    nodePort: 30005
+    protocol: TCP
+  selector:
+    app: hellokubeapp
+    zone: dev

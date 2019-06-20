@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: hellokube-rs
+spec:
+  replicas: 6
+  selector:
+    matchLabels:
+      app: hellokubeapp
+  template:
+    metadata:
+      labels:
+        app: hellokubeapp
+        zone: dev
+    spec:
+      containers:
+      - name: hellokube
+        image: "hellokube:v.1.0"
+        ports:
+          - containerPort: 9090

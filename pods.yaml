@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: hellokube
+ labels:
+   zone: prod
+   version: v1
+spec:
+ containers:
+ - name: hellokube
+   image: hellokube:v.1.0
+   imagePullPolicy: IfNotPresent
+   ports:
+   - containerPort: 9090
